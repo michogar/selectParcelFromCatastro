@@ -13,12 +13,18 @@ module.exports = class Gml2JSON {
 
         const ds = gdal.open(tmpFile.name)
         let json = null
+        const epsg4326 = gdal.SpatialReference.fromEPSGA(4326);
+        const epsg25829 = gdal.SpatialReference.fromEPSGA(25829);
+        const transform = new gdal.CoordinateTransformation(epsg25829, epsg4326)
+
         ds.layers.forEach((layer) => {
             if (layer.features.count() !== 1) {
                 throw new Error('More than one feature!!')
             }
             layer.features.forEach((feature) => {
-                json = feature.getGeometry().toJSON();
+                let geom = feature.getGeometry()
+                geom.transform(transform)
+                json = geom.toJSON()
             })
         })
         return json
