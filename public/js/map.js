@@ -26,28 +26,34 @@ L.control.layers(baseMaps).addTo(map)
 
 let layer = null
 
+const theStyle = {
+    "color": "#23ff0c",
+    "weight": 3,
+    "opacity": 0.8
+};
+
+const addGeom = (geom) => {
+    if (layer) {
+        layer.remove()
+    }
+    layer = L.geoJSON(JSON.parse(geom), {
+        style: theStyle
+    }).addTo(map)
+
+    map.flyToBounds(layer.getBounds())
+}
+
 map.on('click', (evt) => {
     const point = map.latLngToContainerPoint(evt.latlng, map.getZoom())
     const size = map.getSize()
     const bbox = map.getBounds().toBBoxString()
 
     const URL = `getfeatureinfo?bbox=${bbox}&height=${size.y}&width=${size.x}&x=${point.x}&y=${point.y}`
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function(request) {
-        if (request.target.readyState != 4 || request.target.status != 200) return;
-        const geom = request.target.responseText;
-        const theStyle = {
-            "color": "#23ff0c",
-            "weight": 3,
-            "opacity": 0.8
-        };
-        if (layer) {
-            layer.remove()
-        }
-        layer = L.geoJSON(JSON.parse(geom), {
-            style: theStyle
-        }).addTo(map)
-    };
-    xhr.open('GET', URL, true);
-    xhr.send();
+
+    Get(URL, (geom) => addGeom(geom))
+})
+
+document.getElementById('btnRefcat').addEventListener('click', (evt) => {
+    const URL = `getrefcat?refcat=${document.getElementById('txtRefcat').value}`
+    Get(URL, (geom) => addGeom(geom))
 })
