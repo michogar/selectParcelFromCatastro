@@ -24,6 +24,8 @@ const baseMaps = {
 
 L.control.layers(baseMaps).addTo(map)
 
+let layer = null
+
 map.on('click', (evt) => {
     const point = map.latLngToContainerPoint(evt.latlng, map.getZoom())
     const size = map.getSize()
@@ -34,6 +36,17 @@ map.on('click', (evt) => {
     xhr.onreadystatechange = function(request) {
         if (request.target.readyState != 4 || request.target.status != 200) return;
         const geom = request.target.responseText;
+        const theStyle = {
+            "color": "#23ff0c",
+            "weight": 3,
+            "opacity": 0.8
+        };
+        if (layer) {
+            layer.remove()
+        }
+        layer = L.geoJSON(JSON.parse(geom), {
+            style: theStyle
+        }).addTo(map)
     };
     xhr.open('GET', URL, true);
     xhr.send();

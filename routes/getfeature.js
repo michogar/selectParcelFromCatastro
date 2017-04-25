@@ -17,6 +17,7 @@ router.get('/', function(req, res, next) {
     const getfeatureinfo = new GetFeatureInfo()
 
     getfeatureinfo.getFeatureInfo(point, size, req.query.bbox).then((result) => {
+        res.setHeader('content-type', 'application/json');
         res.send(result);
     })
 
