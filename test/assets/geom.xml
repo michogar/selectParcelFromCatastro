@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Parcela Catastral de la D.G. del Catastro.-->
+<gml:FeatureCollection gml:id="ES.SDGC.CP" xmlns:gml="http://www.opengis.net/gml/3.2"  xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:cp="urn:x-inspire:specification:gmlas:CadastralParcels:3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:x-inspire:specification:gmlas:CadastralParcels:3.0 http://inspire.ec.europa.eu/schemas/cp/3.0/CadastralParcels.xsd">
+    <gml:featureMember>
+        <cp:CadastralParcel gml:id="ES.SDGC.CP.2261801NG2726S">
+            <gml:boundedBy>
+                <gml:Envelope srsName="urn:ogc:def:crs:EPSG::25829">
+                    <gml:lowerCorner>522101.33 4675889.47</gml:lowerCorner>
+                    <gml:upperCorner>522160.16 4676021.88</gml:upperCorner>
+                </gml:Envelope>
+            </gml:boundedBy>
+            <cp:areaValue uom="m2">3786</cp:areaValue>
+            <cp:beginLifespanVersion>2007-10-30T00:00:00</cp:beginLifespanVersion>
+            <cp:endLifespanVersion xsi:nil="true" nilReason="other:unpopulated"></cp:endLifespanVersion>
+            <cp:geometry>
+                <gml:MultiSurface gml:id="MultiSurface_ES.SDGC.CP.2261801NG2726S" srsName="urn:ogc:def:crs:EPSG::25829">
+                    <gml:surfaceMember>
+                        <gml:Surface gml:id="Surface_ES.SDGC.CP.2261801NG2726S.1" srsName="urn:ogc:def:crs:EPSG::25829">
+                            <gml:patches>
+                                <gml:PolygonPatch>
+                                    <gml:exterior>
+                                        <gml:LinearRing>
+                                            <gml:posList srsDimension="2" count="64"> 522143.04 4676021.88 522143.82 4676019.49 522147.6 4676007.28 522148.84 4676003.58 522153.33 4675990.2 522154.18 4675987.66 522157.87 4675976.55 522159.33 4675972.66 522159.75 4675971.14 522159.9 4675969.52 522160.13 4675965.2 522160.16 4675961.69 522159.87 4675959.13 522159.24 4675955.09 522158.79 4675953 522151.6 4675935.78 522150.96 4675932.21 522150.6 4675928.03 522150.59 4675922.7 522150.96 4675910.33 522151.08 4675905.81 522151.12 4675893.93 522150.19 4675889.47 522140.58 4675893.9 522135.43 4675896.44 522125.37 4675901.42 522124.94 4675901.63 522124.52 4675901.84 522124.09 4675902.05 522123.67 4675902.27 522121.87 4675903.15 522120.17 4675904 522118.38 4675904.88 522117.95 4675905.1 522117.53 4675905.31 522117.1 4675905.52 522116.67 4675905.73 522114.88 4675906.61 522113.18 4675907.46 522111.39 4675908.35 522110.96 4675908.56 522110.53 4675908.77 522110.11 4675908.98 522109.68 4675909.19 522107.61 4675910.21 522101.33 4675913.08 522102.55 4675916.05 522124.66 4675962.72 522132.86 4675980.03 522131.08 4675980.81 522130.62 4675981.01 522130.16 4675981.21 522129.71 4675981.42 522129.25 4675981.62 522128.79 4675981.82 522128.33 4675982.02 522127.87 4675982.22 522127.41 4675982.42 522125.77 4675983.14 522126.44 4675984.56 522127.3 4675986.41 522132.66 4675995.88 522139.5 4676009.97 522143.04 4676021.88</gml:posList>
+                                        </gml:LinearRing>
+                                    </gml:exterior>
+                                </gml:PolygonPatch>
+                            </gml:patches>
+                        </gml:Surface>
+                    </gml:surfaceMember>
+                </gml:MultiSurface>
+            </cp:geometry>
+            <cp:inspireId xmlns:base="urn:x-inspire:specification:gmlas:BaseTypes:3.2">
+                <base:Identifier>
+                    <base:localId>2261801NG2726S</base:localId>
+                    <base:namespace>ES.SDGC.CP</base:namespace>
+                </base:Identifier>
+            </cp:inspireId>
+            <cp:label>01</cp:label>
+            <cp:nationalCadastralReference>2261801NG2726S</cp:nationalCadastralReference>
+            <cp:referencePoint>
+                <gml:Point gml:id="ReferencePoint_ES.SDGC.CP.2261801NG2726S" srsName="urn:ogc:def:crs:EPSG::25829">
+                    <gml:pos>522136.26 4675944.29</gml:pos>
+                </gml:Point>
+            </cp:referencePoint>
+            <cp:validFrom xsi:nil="true" nilReason="other:unpopulated"></cp:validFrom>
+            <cp:validTo xsi:nil="true" nilReason="other:unpopulated"></cp:validTo>
+            <cp:zoning xlink:href="http://ovc.catastro.meh.es/INSPIRE/wfsCP.aspx?service=wfs&amp;version=2&amp;request=GetFeature&amp;STOREDQUERIE_ID=GetZoning&amp;cod_zona=22618NG2726S&amp;srsname=urn:ogc:def:crs:EPSG::25829"></cp:zoning>
+        </cp:CadastralParcel>
+    </gml:featureMember>
+</gml:FeatureCollection>

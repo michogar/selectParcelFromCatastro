@@ -4,7 +4,7 @@
 
 const rp = require('request-promise-native');
 const parseString = require('xml2js').parseString;
-const gdal = require('gdal');
+const Gml2JSON = require('../gml2json')
 
 module.exports = class GetFeatureInfo {
 
@@ -19,7 +19,7 @@ module.exports = class GetFeatureInfo {
 
         return new Promise((resolve, reject) => {
             rp(URL_WFS_CATASTRO(refcat)).then((result) => {
-                resolve(result);
+                resolve(Gml2JSON.parseJSON(result));
             }).catch(reject)
         })
     }
